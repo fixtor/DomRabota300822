@@ -29,22 +29,21 @@ void PrintArray(int[,] inArray)
     for (int i = 0; i < inArray.GetLength(0); i++)
     {
         for (int j = 0; j < inArray.GetLength(1); j++)
-        { Console.Write($"{inArray[i, j]} "); }
+            Console.Write($"{inArray[i, j]} ");
         Console.WriteLine();
     }
     Console.WriteLine();
 }
 
-void PrintOneDimArray(int[] array) 
+void PrintOneDimArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
-        System.Console.Write($"{array[i]} "); 
-        System.Console.WriteLine();
+        System.Console.Write($"{array[i]} ");
+    System.Console.WriteLine();
 }
 
 int[] FindSummInRows(int[,] array, int rows, int columns) // Находим суммы в строках 
-                                                          // и заносим в одномерный массив
-{
+{                                                         // и заносим в одномерный массив
     int summRow = 0;
     int[] columnArray = new int[columns]; // массив столбцов
     int[] rawArray = new int[rows]; // массив строк
@@ -53,12 +52,11 @@ int[] FindSummInRows(int[,] array, int rows, int columns) // Находим су
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-         columnArray[j] = array[i, j];
+            columnArray[j] = array[i, j];
             summRow = summRow + columnArray[j];
         }
         rawArray[i] = summRow;
         summRow = 0;
-
     }
     return rawArray;
 }
