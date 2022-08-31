@@ -63,7 +63,10 @@ Console.Write("Введите количество строк массива: ")
 int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов массива: ");
 int columns = Convert.ToInt32(Console.ReadLine());
-
+if(columns != rows)
+    System.Console.WriteLine("Количество строк не равно столбцам, матрицы перемножать нельзя");
+else
+{
 int[,] matrixOne = GetMatrixOne(rows, columns, 0, 10); //вводим одинаковые размеры матриц 1,2
 int[,] matrixTwo = GetMatrixTwo(rows, columns, 0, 10);
 int[,] multiply = MultiplyMatrix(matrixOne, matrixTwo); // умножаем
@@ -71,3 +74,4 @@ int[,] multiply = MultiplyMatrix(matrixOne, matrixTwo); // умножаем
 PrintArray(matrixOne);
 PrintArray(matrixTwo);
 PrintArray(multiply);
+}
